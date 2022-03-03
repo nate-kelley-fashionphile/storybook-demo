@@ -1,6 +1,6 @@
 {
   "name": "@nate-kelley-fashionphile/vue3-common",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "private": false,
   "main": "dist/library.js",
   "module": "dist/library.mjs",
@@ -11,7 +11,6 @@
     "build": "rollup -c",
     "build-storybook": "build-storybook",
     "lint": "vue-cli-service lint",
-    "publish": "npm publish --access=public",
     "storybook": "start-storybook -p 6006",
     "test:unit": "vue-cli-service test:unit"
   },
@@ -54,9 +53,7 @@
     "vuepress": "^2.0.0-beta.36"
   },
   "peerDependencies": {
-    "vue": "^3.2.31"
-  },
-  "dependencies": {
+    "vue": "^3.2.31",
     "@fortawesome/fontawesome-free": "^6.0.0"
   }
 }
