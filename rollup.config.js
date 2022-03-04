@@ -2,40 +2,38 @@ import vue from "rollup-plugin-vue";
 import typescript from "rollup-plugin-typescript2";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import clear from "rollup-plugin-clear";
+import postcss from "rollup-plugin-postcss"; // v4.0.0
 
 export default [
   {
-    input: "src/components/index.ts",
+    input: "src/index.ts",
     output: [
       {
         format: "esm",
-        file: "dist/library.mjs",
+        file: "lib/index.esm.js",
+        exports: "named",
       },
       {
         format: "cjs",
-        file: "dist/library.js",
+        file: "lib/index.js",
+        exports: "named",
       },
     ],
-    /*
-    output: {
-        dir: 'dist',
-        format: 'cjs',
-        sourcemap: true,
-    },
-    */
     plugins: [
-      vue({ preprocessStyles: true }),
       typescript({
         tsconfigOverride: {
           compilerOptions: {
             declaration: true,
           },
           include: null,
+          preserveModules: true,
         },
       }),
       peerDepsExternal(),
+      vue({ preprocessStyles: true }),
+      postcss(),
       clear({
-        targets: ["./dist"],
+        targets: ["./lib"],
       }),
     ],
   },
