@@ -1,29 +1,45 @@
-# storybook-demo
+# Description
 
-## Project setup
+A demo project for fashionphile to showcase a common component library for Vue3
+
+# How to Use
+
+## Class Syntax
+
 ```
-npm install
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import { AppButton } from "@nate-kelley-fashionphile/vue3-common";
+
+@Options({
+  components: {
+    AppButton,
+  },
+})
+export default class App extends Vue {}
+</script>
+
+<template>
+  <div>
+    <AppButton text="swag" />
+  </div>
+</template>
 ```
 
-### Compiles and hot-reloads for development
+## Composition Api Syntax
+
 ```
-npm run serve
+<script setup lang="ts">
+import { AppButton } from "@nate-kelley-fashionphile/vue3-common";
+</script>
+
+<template>
+  <div>
+    <AppButton text="swag" />
+  </div>
+</template>
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Plugin Syntax
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+TBD
