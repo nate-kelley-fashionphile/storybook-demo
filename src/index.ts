@@ -1,15 +1,11 @@
 import * as components from "./components/index";
-import { InputText } from "./components";
+import { App } from "vue";
 
 const plugin = {
-  install(Vue: any) {
-    for (const prop in components) {
-      if (components.hasOwnProperty(prop)) {
-        //@ts-ignore
-        const component = components[prop];
-        Vue.component(component.name, component);
-      }
-    }
+  install(app: App<Element>) {
+    Object.entries(components).forEach(([componentName, component]) => {
+      app.component(componentName, component);
+    });
   },
 };
 

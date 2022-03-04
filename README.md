@@ -42,4 +42,13 @@ import { AppButton } from "@nate-kelley-fashionphile/vue3-common";
 
 ## Plugin Syntax
 
-TBD
+```
+//main.ts
+import plugin from "@nate-kelley-fashionphile/vue3-common";
+
+const app = createApp(App);
+
+app.use(plugin);
+
+app.mount("#app");
+```

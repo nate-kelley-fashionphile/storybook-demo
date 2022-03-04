@@ -1,6 +1,6 @@
 {
   "name": "@nate-kelley-fashionphile/vue3-common",
-  "version": "0.0.16",
+  "version": "0.0.27",
   "private": false,
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -12,7 +12,7 @@
     "build": "rollup -c",
     "build-storybook": "build-storybook",
     "lint": "vue-cli-service lint",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "storybook": "start-storybook -p 6006",
     "test:unit": "vue-cli-service test:unit"
   },
